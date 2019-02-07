@@ -25,11 +25,12 @@
 
 .question{
     text-align: center;
-    padding: 2em;
+    padding-bottom: 2em;
 }
 
 .answered{
     text-align: center;
+    padding-bottom: 2em;
 }
 
 body {

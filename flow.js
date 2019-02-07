@@ -46,7 +46,7 @@ let displayJourney = function (journey) {
 }
 
 let scrollToLast = function () {
-    $('html,body').animate({ scrollTop: $("#journey > .question").last().offset().top }, animationSpeed);
+    $('html,body').animate({ scrollTop: $("#journey > .question").last().offset().top + 100 }, animationSpeed);
 }
 
 /**
@@ -55,30 +55,35 @@ let scrollToLast = function () {
  * @param {string} answer
  */
 let nextStep = function (node, answer) {
-    $("#journey").append(
-        $("<div>").addClass("question").text(node.name).css("opacity", 0.1).fadeTo(animationSpeed, 1)
-    )
-    scrollToLast()
-    if (!answer) {
-        $("#options").empty()
-        for (let a in node.children) {
-            $("#options").append(
-                $("<div>").addClass("answers").append(
-                    $("<a>")
-                        .attr("href", "#")
-                        .click(
-                            function () { pickAnswer(node, a) }
-                        )
-                        .text(a)
+
+    let addNewAnswers = function () {
+        if (!answer) {
+            $("#options").empty()
+            for (let a in node.children) {
+                $("#options").append(
+                    $("<div>").addClass("answers").append(
+                        $("<a>")
+                            .attr("href", "#")
+                            .click(
+                                function () { pickAnswer(node, a) }
+                            )
+                            .text(a)
+                    )
                 )
+            }
+        } else {
+            $("#journey").append(
+                $("<div>").addClass("answered").text(answer)
             )
-            $("#options").fadeIn(200)
         }
-    } else {
-        $("#journey").append(
-            $("<div>").addClass("answered").text(answer)
-        )
+        scrollToLast()
+        $("#options").hide().fadeIn(200, scrollToLast)
     }
+
+
+    $("#journey").append(
+        $("<div>").addClass("question").text(node.name).show().css("opacity", 0.01).fadeTo(animationSpeed, 1, addNewAnswers)
+    )
 }
 
 /**
@@ -88,11 +93,12 @@ let nextStep = function (node, answer) {
  */
 let pickAnswer = function (node, answer) {
     scrollToLast()
+    let addNextStep = function () {
+        nextStep(node.children[answer], null)
+    }
     $("#options").fadeOut(animationSpeed, function () {
         $("#journey").append(
-            $("<div>").hide().fadeIn(animationSpeed, function () {
-                nextStep(node.children[answer], null)
-            }
+            $("<div>").hide().fadeIn(animationSpeed, addNextStep
             ).addClass("answered").text(answer)
         )
     })
