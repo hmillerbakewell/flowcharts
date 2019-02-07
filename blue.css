@@ -1,0 +1,44 @@
+#journey {
+    min-width: 20em;
+    background-color: cornflowerblue;
+}
+
+#midline{
+    display: grid;
+    justify-content: center;
+    padding: 2em;
+}
+
+#options{
+    display: grid;
+    grid-gap: 1em;
+    grid-auto-flow: row;
+    grid-template-columns: repeat( auto-fit, minmax(10em, 1fr) );
+    max-width: 50em;
+}
+
+.answers {
+    justify-self: center;
+    background-color: cornflowerblue;
+    transition: opacity 2s ease-in;
+}
+
+.question{
+    text-align: center;
+    padding: 2em;
+}
+
+.answered{
+    text-align: center;
+}
+
+body {
+    color: #1d2a3a;
+    background-color: cornflowerblue;
+    font-size: 2em;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }

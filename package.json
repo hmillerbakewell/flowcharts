@@ -1,0 +1,23 @@
+{
+  "name": "flowcharts",
+  "version": "1.0.0",
+  "description": "A simple flowchart displayed as a series of questions and answers",
+  "main": "flow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmillerbakewell/flowcharts.git"
+  },
+  "keywords": [
+    "flowchart",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmillerbakewell/flowcharts/issues"
+  },
+  "homepage": "https://github.com/hmillerbakewell/flowcharts#readme"
+}
