@@ -61,14 +61,11 @@ let nextStep = function (node, answer) {
             $("#options").empty()
             for (let a in node.children) {
                 $("#options").append(
-                    $("<div>").addClass("answers").append(
-                        $("<a>")
-                            .attr("href", "#")
-                            .click(
-                                function () { pickAnswer(node, a) }
-                            )
-                            .text(a)
-                    )
+                    $("<div>").addClass("answers")
+                        .text(a)
+                        .click(
+                            function () { pickAnswer(node, a) }
+                        )
                 )
             }
         } else {

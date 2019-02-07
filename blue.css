@@ -21,14 +21,16 @@
     justify-self: center;
     background-color: cornflowerblue;
     transition: opacity 2s ease-in;
+    padding: 1em;
 }
 
 .question{
     text-align: center;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 .answered{
+    padding-top: 1em;
     text-align: center;
     padding-bottom: 2em;
 }
