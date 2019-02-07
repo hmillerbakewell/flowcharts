@@ -18,6 +18,7 @@ class FlowNode {
     }
 }
 
+let animationSpeed = 400
 
 let root = new FlowNode("Ready to start the flowchart?")
 
@@ -26,8 +27,8 @@ let root = new FlowNode("Ready to start the flowchart?")
  * @param {object[]} journey 
  */
 let displayJourney = function (journey) {
-    $("#journey").empty().hide().fadeIn(200)
-    $("#options").empty().hide().fadeIn(200)
+    $("#journey").empty().hide().fadeIn(100)
+    $("#options").empty().hide().fadeIn(100)
 
     if (!journey || journey.length == 0) {
         displayJourney([{
@@ -45,7 +46,7 @@ let displayJourney = function (journey) {
 }
 
 let scrollToLast = function () {
-    $('html,body').animate({ scrollTop: $("#journey > .question").last().offset().top }, 'slow');
+    $('html,body').animate({ scrollTop: $("#journey > .question").last().offset().top }, animationSpeed);
 }
 
 /**
@@ -55,7 +56,7 @@ let scrollToLast = function () {
  */
 let nextStep = function (node, answer) {
     $("#journey").append(
-        $("<div>").addClass("question").text(node.name).css("opacity", 0.1).fadeTo(200, 1)
+        $("<div>").addClass("question").text(node.name).css("opacity", 0.1).fadeTo(animationSpeed, 1)
     )
     scrollToLast()
     if (!answer) {
@@ -87,10 +88,12 @@ let nextStep = function (node, answer) {
  */
 let pickAnswer = function (node, answer) {
     scrollToLast()
-    $("#options").fadeOut(100, function () {
+    $("#options").fadeOut(animationSpeed, function () {
         $("#journey").append(
-            $("<div>").hide().fadeIn(200).addClass("answered").text(answer)
+            $("<div>").hide().fadeIn(animationSpeed, function () {
+                nextStep(node.children[answer], null)
+            }
+            ).addClass("answered").text(answer)
         )
-        nextStep(node.children[answer], null)
     })
 }
