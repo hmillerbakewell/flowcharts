@@ -1,6 +1,7 @@
 #journey {
     min-width: 20em;
     background-color: cornflowerblue;
+    color: #002a5e;
 }
 
 #midline{
@@ -21,6 +22,7 @@
 .answers {
     justify-self: center;
     background-color: cornflowerblue;
+    color: #001125;
     transition: opacity 2s ease-in;
     padding: 1em;
     cursor: pointer;
@@ -39,7 +41,6 @@
 }
 
 body {
-    color: #1d2a3a;
     background-color: cornflowerblue;
     font-size: 2em;
     overflow-y: scroll;
