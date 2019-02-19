@@ -25,9 +25,10 @@ let q19 = new FlowNode("Try rephrasing your strategy so that it is clear what da
 let q20 = new FlowNode("List of examples of value exchanges")
 let q21 = new FlowNode("List of examples of legal purposes")
 let q22 = new FlowNode("Please re-evaluate your strategy and start again")
+let q23 = new FlowNode("That's okay. Just come back to it when you need it.")
 
 root.link(q1, "Yes")
-root.link(q12, "No")
+root.link(q23, "No")
 
 q1.link(q2, "Yes")
 q1.link(q12, "No")
@@ -83,3 +84,5 @@ q20.link(q1, "Got it")
 q21.link(q3, "Okay")
 
 q22.link(q1, "Okay")
+
+q23.link(q1, "Okay, I'm ready.")
