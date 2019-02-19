@@ -25,9 +25,10 @@ let q19 = new FlowNode("Try rephrasing your strategy so that it is clear what da
 let q20 = new FlowNode("A health tracking app exchanges user information for data visualisation and prompts. A newsletter sign up request exchanges contact details for relevant news. An invitation to a survey exchanges participant information for an opportunity to be heard.")
 let q21 = new FlowNode("Lawful basis is determined by local legislation. For processing under the GDPR, these include user consent, legitimate interests of the company, requirement to fill contractual obligation, legal obligation as well as requiremnt to fulfill public tasks or protect a person's vital interests. In the case of algorithm development, ensure the work is compatible with the Guildelines for Automated Decision Making (or local equivalent). If you are at all unsure, check with legal.")
 let q22 = new FlowNode("Please re-evaluate your strategy and start again")
+let q23 = new FlowNode("That's okay. Just come back to it when you need it.")
 
 root.link(q1, "Yes")
-root.link(q12, "No")
+root.link(q23, "No")
 
 q1.link(q2, "Yes")
 q1.link(q12, "No")
@@ -83,3 +84,5 @@ q20.link(q1, "Got it")
 q21.link(q3, "Okay")
 
 q22.link(q1, "Okay")
+
+q23.link(q1, "Okay, I'm ready.")
