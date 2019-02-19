@@ -1,22 +1,36 @@
+#header {
+    position: sticky;
+    min-width: 20em;
+    background-color: #002a5e;
+    color: cornflowerblue;
+    cursor: default;
+    text-align: center;
+    padding: 1em 0em;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+}
+
 #journey {
     min-width: 20em;
     background-color: cornflowerblue;
+    padding-top: 1em;
     color: #002a5e;
     cursor: default;
 }
 
-#midline{
+#midline {
     display: grid;
     justify-content: center;
-    padding: 2em;
-    padding-bottom: 10em;
+    padding: 0em 2em;
+    padding-bottom: 5em;
 }
 
-#options{
+#options {
     display: grid;
     grid-gap: 1em;
     grid-auto-flow: row;
-    grid-template-columns: repeat( auto-fit, minmax(10em, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(10em, 1fr));
     max-width: 50em;
 }
 
@@ -25,20 +39,19 @@
     background-color: cornflowerblue;
     color: #001125;
     transition: opacity 2s ease-in;
-    padding: 1em;
+    padding-bottom: 1em;
     cursor: pointer;
     text-align: center;
 }
 
-.question{
+.question {
     text-align: center;
     padding-bottom: 1em;
 }
 
-.answered{
-    padding-top: 1em;
+.answered {
+    padding-bottom: 1em;
     text-align: center;
-    padding-bottom: 2em;
 }
 
 body {
@@ -55,4 +68,4 @@ a {
     color: inherit;
     text-decoration: underline;
     cursor: pointer;
-  }
+}
