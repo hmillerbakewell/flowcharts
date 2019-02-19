@@ -31,7 +31,7 @@ root.link(q12, "No")
 
 q1.link(q2, "Yes")
 q1.link(q12, "No")
-q1.link(q14, "What is value exchange?")
+q1.link(q14, "What is a value exchange?")
 
 q2.link(q3, "Yes")
 q2.link(q19, "No")
