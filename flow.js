@@ -62,7 +62,7 @@ let nextStep = function (node, answer) {
             for (let a in node.children) {
                 $("#options").append(
                     $("<div>").addClass("answers")
-                        .text(a)
+                        .html(a)
                         .click(
                             function () { pickAnswer(node, a) }
                         )
@@ -70,7 +70,7 @@ let nextStep = function (node, answer) {
             }
         } else {
             $("#journey").append(
-                $("<div>").addClass("answered").text(answer)
+                $("<div>").addClass("answered").html(answer)
             )
         }
         scrollToLast()
@@ -79,7 +79,7 @@ let nextStep = function (node, answer) {
 
 
     $("#journey").append(
-        $("<div>").addClass("question").text(node.name).show().css("opacity", 0.01).fadeTo(animationSpeed, 1, addNewAnswers)
+        $("<div>").addClass("question").html(node.name).show().css("opacity", 0.01).fadeTo(animationSpeed, 1, addNewAnswers)
     )
 }
 
@@ -99,4 +99,19 @@ let pickAnswer = function (node, answer) {
             ).addClass("answered").text(answer)
         )
     })
+}
+
+/**
+ * 
+ * @param {string} phrase 
+ */
+let showDefinition = function (phrase) {
+    let longVersion = lookup[phrase]
+    $("#lookup").show()
+    $("#lookup > #title").text(phrase)
+    $("#lookup > #body").text(longVersion)
+}
+
+let hideDefintion = function() {
+    $("#lookup").hide()
 }

@@ -7,6 +7,7 @@
     display: grid;
     justify-content: center;
     padding: 2em;
+    padding-bottom: 10em;
 }
 
 #options{
@@ -22,6 +23,8 @@
     background-color: cornflowerblue;
     transition: opacity 2s ease-in;
     padding: 1em;
+    cursor: pointer;
+    text-align: center;
 }
 
 .question{
@@ -40,6 +43,10 @@ body {
     background-color: cornflowerblue;
     font-size: 2em;
     overflow-y: scroll;
+}
+
+#lookup {
+    position: absolute;
 }
 
 a {
