@@ -17,7 +17,7 @@ let q9 = new FlowNode("Infrastructure can be physical storage, data management s
 let q10 = new FlowNode("List of examples.")
 let q11 = new FlowNode("Do you know what data you need to collect from your user in order to offer your service succesfully?")
 let q12 = new FlowNode("Construct a value exchange first, then evaluate the strategy.")
-let q14 = new FlowNode("A Value Exchange is a simple proposition in which specific user data is exchanged for a given service.")
+let q14 = new FlowNode("A Value Exchange is a simple proposition in which specific user data is exchanged for a given service. Can you find one?")
 let q15 = new FlowNode("There are <a>specific legal purposes</a> for data collection. Is what you are suggesting covered?")
 let q17 = new FlowNode("Find out what is possible, then come back.")
 let q18 = new FlowNode("Great! There are no legal impediments to your proposal.")
@@ -63,11 +63,11 @@ q12.link(q1, "Got it")
 
 // q13 merged with q14
 
-q14.link(q2, "I can find a value exchange")
+q14.link(q2, "Yes")
 q14.link(q20, "Can I have some examples?")
 
 q15.link(q4, "Yes")
-q15.link(q22, "My strategy is not covered")
+q15.link(q22, "No")
 q15.link(q21, "Can I have some examples?")
 
 //q16 replaced with q22
