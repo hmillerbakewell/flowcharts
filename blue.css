@@ -2,6 +2,7 @@
     min-width: 20em;
     background-color: cornflowerblue;
     color: #002a5e;
+    cursor: default;
 }
 
 #midline{
@@ -52,5 +53,6 @@ body {
 
 a {
     color: inherit;
-    text-decoration: inherit;
+    text-decoration: underline;
+    cursor: pointer;
   }
