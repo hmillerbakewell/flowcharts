@@ -1,17 +1,17 @@
 //@ts-check
 class FlowNode {
     /**
-     * 
-     * @param {string} name 
+     *
+     * @param {string} name
      */
     constructor(name) {
         this.name = name
         this.children = {}
     }
     /**
-     * 
-     * @param {FlowNode} node 
-     * @param {string} answer 
+     *
+     * @param {FlowNode} node
+     * @param {string} answer
      */
     link(node, answer) {
         this.children[answer] = node
@@ -20,11 +20,11 @@ class FlowNode {
 
 let animationSpeed = 400
 
-let root = new FlowNode("Ready to start the flowchart?")
+let root = new FlowNode("Are you ready to do the digital?")
 
 /**
- * 
- * @param {object[]} journey 
+ *
+ * @param {object[]} journey
  */
 let displayJourney = function (journey) {
     $("#journey").empty().hide().fadeIn(100)
@@ -50,8 +50,8 @@ let scrollToLast = function () {
 }
 
 /**
- * 
- * @param {FlowNode} node 
+ *
+ * @param {FlowNode} node
  * @param {string} answer
  */
 let nextStep = function (node, answer) {
@@ -84,9 +84,9 @@ let nextStep = function (node, answer) {
 }
 
 /**
- * 
+ *
  * @param {FlowNode} node
- * @param {string} answer 
+ * @param {string} answer
  */
 let pickAnswer = function (node, answer) {
     scrollToLast()
@@ -102,8 +102,8 @@ let pickAnswer = function (node, answer) {
 }
 
 /**
- * 
- * @param {string} phrase 
+ *
+ * @param {string} phrase
  */
 let showDefinition = function (phrase) {
     let longVersion = lookup[phrase]
