@@ -8,6 +8,9 @@
     z-index: 2;
     top: 0px;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 #journey {
@@ -55,12 +58,22 @@
 
 body {
     background-color: cornflowerblue;
-    font-size: 1.5em;
+    font-size: x-large;
     overflow-y: scroll;
 }
 
 #lookup {
     position: absolute;
+}
+
+.credit{
+    font-size: small;
+    grid-column: 3;
+}
+
+.title{
+    grid-column: 2;
+    grid-row: span 2;
 }
 
 a {
